@@ -1,0 +1,38 @@
+{
+    "name": "datalinx/php-package-template",
+    "description": "PHP package template",
+    "keywords": [
+        "php",
+        "template"
+    ],
+    "homepage": "https://github.com/datalinx/php-package-template",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DataLinx",
+            "email": "info@datalinx.si"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "DataLinx\\PhpPackageTemplate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DataLinx\\PhpPackageTemplate\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+
+    }
+}

@@ -1,0 +1,10 @@
+name: php-package-template
+services:
+  appserver:
+    type: php:8.1
+    via: cli
+tooling:
+  php:
+    service: appserver
+  composer:
+    service: appserver
