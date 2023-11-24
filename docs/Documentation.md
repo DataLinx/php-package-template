@@ -3,22 +3,22 @@ Welcome to the php-package-template documentation!
 Here are the main guidelines for developing redistributable PHP packages at DataLinx.
 
 <!-- TOC -->
-  * [Conventional commits](#conventional-commits)
+  * [Conventional Commits](#conventional-commits)
     * [Setting up in an existing project](#setting-up-in-an-existing-project)
     * [Types](#types)
   * [Release Please](#release-please)
   * [Code style and formatting](#code-style-and-formatting)
 <!-- TOC -->
 
-## Conventional commits
+## Conventional Commits
 
-✅️ All VCS commits must adhere to the [Conventional commits](Conventional%20commits.md).
+✅️ All VCS commits must adhere to the Conventional Commits specification.
 
-Conventional commits are a specification for adding human and machine readable meaning to commit messages.
-They are based on the [Semantic Versioning](https://semver.org/) specification.
-You can read more about them on [conventionalcommits.org](https://www.conventionalcommits.org/).
+Conventional Commits is a specification for adding human and machine readable meaning to commit messages.
+It is based on the [Semantic Versioning](https://semver.org/) specification.
+You can read more about it on [conventionalcommits.org](https://www.conventionalcommits.org/).
 
-They are locally enforced by using [commitlint](https://commitlint.js.org/) and a git hook (by using Husky).
+Conventional commit messages are locally enforced by using [commitlint](https://commitlint.js.org/) and a git hook (by using Husky).
 They are required for the release-please GitHub action, which automatically creates pull requests for new releases with the updated changelog.
 
 ### Setting up in an existing project
