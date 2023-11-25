@@ -111,6 +111,7 @@ Also, `test-runner.yml` is included in the `.github/workflows` directory, which 
         cmd: composer test
     ```
 5. Copy and configure the `test-runner.yml` GitHub workflow file from this template to your project.
+6. Add the _Test runner_ and _Codecov_ badges to the `README.md` file.
 
 ### Running tests
 There are different ways to run tests:
