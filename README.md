@@ -3,6 +3,7 @@
 ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/datalinx/php-package-template)
 ![Packagist Version](https://img.shields.io/packagist/v/datalinx/php-package-template)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/datalinx/php-package-template)
+[![Test runner](https://github.com/DataLinx/php-package-template/actions/workflows/test-runner.yml/badge.svg)](https://github.com/DataLinx/php-package-template/actions/workflows/test-runner.yml)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 ![Packagist License](https://img.shields.io/packagist/l/datalinx/php-package-template)
 

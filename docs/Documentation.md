@@ -91,6 +91,8 @@ Prerequisites:
 
 By creating your package from this template, you will get a fully configured PhpStorm project with Pest, Xdebug and a test runner set up and ready to go.
 
+Also, `test-runner.yml` is included in the `.github/workflows` directory, which you can use as a starting point for your CI testing workflow.
+
 ### Configuring an existing project
 1. Add Pest to the project. See the [Pest documentation](https://pestphp.com/docs/installation) for installation instructions.
 2. Configure PhpStorm for testing and debugging. This is a bit more involved, so it's described in detail on the [Testing with PhpStorm](Testing%20with%20PhpStorm.md) page. 
@@ -108,6 +110,7 @@ By creating your package from this template, you will get a fully configured Php
         description: Run tests
         cmd: composer test
     ```
+5. Copy and configure the `test-runner.yml` GitHub workflow file from this template to your project.
 
 ### Running tests
 There are different ways to run tests:
