@@ -13,3 +13,8 @@ test('it subtracts two numbers', function () {
 test('it multiplies two numbers', function () {
     expect(Math::multiply(2, 2))->toBe(4);
 });
+
+test('it divides two numbers', function () {
+    expect(Math::divide(4, 2))->toBe(2);
+    expect(Math::divide(5, 4))->toBe(1.25);
+});

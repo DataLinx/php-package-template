@@ -18,4 +18,9 @@ class Math
     {
         return $a * $b;
     }
+
+    public static function divide($a, $b): float|int
+    {
+        return $a / $b;
+    }
 }
