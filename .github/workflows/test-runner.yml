@@ -1,0 +1,65 @@
+name: Test runner
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - '**.php'
+  pull_request:
+    branches: [ "master" ]
+    paths:
+      - '**.php'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+
+    runs-on: ${{ matrix.os }}
+
+    # Define the matrix of different PHP and dependency versions
+    strategy:
+      # Fail the whole workflow if one of the jobs fails
+      fail-fast: true
+      matrix:
+        os: [ ubuntu-latest ]
+        php: [ 8.1, 8.2 ]
+        dependency-version: [ prefer-lowest, prefer-stable ]
+
+    name: ${{ matrix.os }} / PHP ${{ matrix.php }} / ${{ matrix.dependency-version }}
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      # If your package requires additional system configuration, uncomment this section and set the run command.
+      #- name: Configure operating system
+      #  if: matrix.os == 'ubuntu-latest'
+      #  run: sudo apt-get install -y locales locales-all
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ matrix.php }}-${{ matrix.dependency-version }}-${{ hashFiles('**/composer.lock') }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          # If your package requires additional extensions, uncomment this line and list them here:
+          # extensions: mbstring, gd, intl
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-progress --${{ matrix.dependency-version }}
+
+      - name: Run test suite
+        run: composer test
