@@ -15,7 +15,10 @@
         }
     ],
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
 
     "minimum-stability": "stable",
@@ -33,9 +36,11 @@
         "php": ">=8.1"
     },
     "require-dev": {
-        "laravel/pint": "^1.13"
+        "laravel/pint": "^1.13",
+        "pestphp/pest": "^2.24"
     },
     "scripts": {
-        "format": "vendor/bin/pint"
+        "format": "vendor/bin/pint",
+        "test": "vendor/bin/pest"
     }
 }

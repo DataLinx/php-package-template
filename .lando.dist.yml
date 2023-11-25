@@ -8,3 +8,7 @@ tooling:
     service: appserver
   composer:
     service: appserver
+  test:
+    service: appserver
+    description: Run tests
+    cmd: "composer test"
