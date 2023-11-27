@@ -6,7 +6,7 @@
         <settings>
           <configurations>
             <configuration_by_sdk interpreter_id="baa8a89e-3d6d-4e94-b05a-9bcfc88ae788" configuration_file_path="/app/phpunit.xml.dist" executable_path="/app/vendor/pestphp/pest/bin/pest" use_configuration_file="true" />
-            <local_configuration executable_path="$PROJECT_DIR$/vendor/pestphp/pest/bin/pest" />
+            <local_configuration configuration_file_path="$PROJECT_DIR$/phpunit.xml" executable_path="$PROJECT_DIR$/vendor/pestphp/pest/bin/pest" use_configuration_file="true" />
           </configurations>
         </settings>
       </tool>

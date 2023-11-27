@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - '**.php'
+  # Make it possible to run the workflow manually
+  workflow_dispatch:
 
 jobs:
   phplint:
@@ -16,16 +18,16 @@ jobs:
       contents: write
 
     steps:
-      # Checkout code
-      - uses: actions/checkout@v4
+
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
 
-      # Run Laravel Pint
-      - name: Laravel Pint
+      - name: Run Laravel Pint
         uses: aglipanci/laravel-pint-action@2.3.0
 
-      # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "style: fix code style"
