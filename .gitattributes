@@ -6,6 +6,7 @@
 /.husky export-ignore
 /.idea export-ignore
 /docs export-ignore
+/env export-ignore
 /tests export-ignore
 
 /.editorconfig export-ignore
