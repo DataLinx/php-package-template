@@ -1,8 +1,10 @@
 name: php-package-template
 services:
   appserver:
-    type: php:8.1
+    type: php:custom
     via: cli
+    overrides:
+      image: slimdeluxe/php:8.1
 tooling:
   php:
     service: appserver
