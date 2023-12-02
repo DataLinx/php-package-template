@@ -34,15 +34,15 @@ jobs:
 
     steps:
 
+      # If your package requires additional system configuration, uncomment this section and set the run command.
+      #- name: Configure operating system
+      #  if: matrix.os == 'ubuntu-latest'
+      #  run: sudo apt-get update && sudo apt-get install -y locales locales-all
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-
-      # If your package requires additional system configuration, uncomment this section and set the run command.
-      #- name: Configure operating system
-      #  if: matrix.os == 'ubuntu-latest'
-      #  run: sudo apt-get install -y locales locales-all
 
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
