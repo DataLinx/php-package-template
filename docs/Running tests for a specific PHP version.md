@@ -34,7 +34,7 @@ This is achieved by:
 
 Mainly, the only point of duplication is the `lando.yml` file, which as it would appear, does not support any kind of inheritance/overloading from multiple directories. So when you change your Lando setup, you will have to remember to update the environment specific ones too.
 
-However, the file that frequently changes is `composer.json` and this is accounted for and solved by solution below.
+However, the file that frequently changes is `composer.json` and this is accounted for and solved by the solution below.
 
 ### Why not use `nektos/act`
 While it seemed promising, during local testing with [`nektos/act`](https://github.com/nektos/act), there were problems:
@@ -106,7 +106,7 @@ As stated above, the lando configuration cannot be merged, so we need to create 
 3. Configure the `appserver` service:
     * Set `appmount` to `delegated`.
     * Set the volume mounts as seen below.
-4If you have a tooling entry for a composer script, you must update `cmd` to use the long `composer run-script myscript` format, because the merge plugin [does not support the short `composer myscript` format](https://github.com/wikimedia/composer-merge-plugin#merge-scripts).
+4. If you have a tooling entry for a composer script, you must update `cmd` to use the long `composer run-script myscript` format, because the merge plugin [does not support the short `composer myscript` format](https://github.com/wikimedia/composer-merge-plugin#merge-scripts).
 
 You should end up with a custom `lando.yml` file that looks somewhat like this:
 ```yaml
