@@ -129,3 +129,6 @@ There are different ways to run tests:
     ```shell
     ./vendor/bin/pest --filter=MyTest
     ```
+
+### Running tests for a specific PHP version
+It's pretty easy, but involves a few steps to set up. Please see the [Running tests for a specific PHP version](Running%20tests%20for%20a%20specific%20PHP%20version.md) page for details.
