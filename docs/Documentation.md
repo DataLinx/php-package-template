@@ -11,6 +11,7 @@ Here are the main guidelines for developing redistributable PHP packages at Data
   * [Testing, debugging and code coverage](#testing-debugging-and-code-coverage)
     * [Configuring an existing project](#configuring-an-existing-project)
     * [Running tests](#running-tests)
+    * [Running tests for a specific PHP version](#running-tests-for-a-specific-php-version)
 <!-- TOC -->
 
 ## Conventional Commits
@@ -80,12 +81,15 @@ To set it up in an existing project:
 ## Testing, debugging and code coverage
 
 ✅️ The package should:
-* be tested with [Pest](https://pestphp.com/),
-* have a fully integrated testing and debugging experience in the PhpStorm IDE,
-* have a high code coverage (ideally 100%, but not at the expense of the common practical sense),
-* have a CI testing workflow.
+* be tested with [Pest](https://pestphp.com/)
+* have a fully integrated testing and debugging experience in the PhpStorm IDE
+* have a high code coverage (ideally 100%, but not at the expense of the common practical sense)
+* have a test runner and code coverage badges in the `README.md` file
+* have a CI testing workflow
+* allow for an easy way to run local tests for a specific PHP version or another environment variable that we support
 
 Prerequisites:
+* Lando
 * PhpStorm
 * Pest PhpStorm plugin - to install it, go to `Settings > Plugins > Marketplace` and search for `Pest`
 
