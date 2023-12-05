@@ -20,7 +20,6 @@
             "pestphp/pest-plugin": true
         }
     },
-
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
