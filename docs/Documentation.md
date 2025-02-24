@@ -22,24 +22,13 @@ Conventional Commits is a specification for adding human and machine-readable me
 It is based on the [Semantic Versioning](https://semver.org/) specification.
 You can read more about it on [conventionalcommits.org](https://www.conventionalcommits.org/).
 
-Conventional commit messages are locally enforced by using [commitlint](https://commitlint.js.org/) and a git hook (by using Husky).
+Conventional commit messages are locally enforced by using [commitlint](https://commitlint.js.org/) and a git hook (by using [Husky](https://typicode.github.io/husky/)).
 They are required for the release-please GitHub action, which automatically creates pull requests for new releases with the updated changelog.
 
 ### Setting up in an existing project
 
-* Run these commands to add the npm packages and the git hook:
-```shell
-npm install --save-dev @commitlint/{cli,config-conventional} husky
-echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
-npx husky install
-npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
-```
-* Add `husky install` to the npm `prepare` script, so it runs when `npm install` is first run after a developer clones your package VCS repository:
-```
-  "scripts": {
-    "prepare": "husky install"
-  }
-```
+Follow the instructions on the [commitlint.js.org](https://commitlint.js.org/guides/getting-started.html) site (Getting started + Local setup)
+
 ### Types
 This is a list with commit types and their example scopes within our packages:
 * `build`: changing files that are related to package development and distribution tools (e.g. lando, npm, vite...) and updating external dependencies (e.g. laravel/framework, league/csv...)
