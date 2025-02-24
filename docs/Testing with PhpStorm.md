@@ -3,6 +3,13 @@ Setting up a fully integrated PhpStorm testing and debugging experience consists
 Please note that despite what the Lando documentation page says, as things currently are, it's not required to add any xdebug entry to the Lando config file.
 Debugging works out of the box, as long as the instructions below are followed.
 
+<!-- TOC -->
+  * [Docker connection](#docker-connection)
+  * [PHP CLI interpreter](#php-cli-interpreter)
+  * [Set up the test runner](#set-up-the-test-runner)
+  * [Debugging through the browser](#debugging-through-the-browser)
+<!-- TOC -->
+
 ## Docker connection
 Add the Docker connection, if you don't have it already:
 * Go to `Settings > Build, Execution, Deployment > Docker`
@@ -38,13 +45,14 @@ Set up the PHP CLI interpreter:
     * In the `Additional` fieldset, for the `Debugger extension` set the Xdebug extension.
         * For PHP 8.1 this should be:  
           `/usr/local/lib/php/extensions/no-debug-non-zts-20210902/xdebug.so`
+        * For PHP 8.2 and 8.3:
+          `/usr/local/lib/php/extensions/no-debug-non-zts-20230831/xdebug.so`
         * You can always find your correct path to `xdebug.so` by SSH-ing into the container (`lando ssh`) and running the command:  
           `find /usr/local/lib/php/extensions -name 'xdebug.so'`
     * If you did everything correctly, you can now click the `Reload phpinfo` button and the correct PHP/Xdebug info will be displayed.  
       [<img src="assets/img/cli-interpreter-final-config.png" width="600" style="margin: 20px 0"/>](assets/img/cli-interpreter-final-config.png)
 
 ## Set up the test runner
-This is the last step and it's the easiest one.
 
 * Open the `Run/Debug Configurations` window in the IDE. The PhpStorm UI changes frequently, but it should be somewhere in the `Run` toolbar.  
   ![](assets/img/test-runner-configs.png)
@@ -65,3 +73,16 @@ That's it! You should now be able to run tests, debug (by setting breakpoints in
 ![](assets/img/code-coverage-tool-window.png)
 
 ![](assets/img/code-coverage-source-code.png)
+
+## Debugging through the browser
+In order to debug your project in PhpStorm
+
+* Install the Xdebug helper  [for Chrome based browsers](https://chromewebstore.google.com/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en-US&utm_source=ext_sidebar) or [for Firefox](https://addons.mozilla.org/en-US/firefox/addon/xdebug-helper-for-firefox/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search).
+* In PhpStorm, go to `Settings > PHP > Servers` and add a localhost server with the app path mapping. The project root should be connected to the app root in the docker container.  
+  [<img src="assets/img/debugging-server.png" width="700" style="margin: 20px 0"/>](assets/img/debugging-server.png)
+* Enable debugging in the browser plugin.   
+  [<img src="assets/img/debugging-enable-plugin.png" style="margin: 20px 0"/>](assets/img/debugging-enable-plugin.png)
+* Start listening for debug connections in PhpStorm:  
+  [<img src="assets/img/debugging-start.png" style="margin: 20px 0"/>](assets/img/debugging-start.png)
+
+That's it, you are ready to debug your project.
