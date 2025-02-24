@@ -4,7 +4,7 @@ services:
     type: php:custom
     via: cli
     overrides:
-      image: slimdeluxe/php:8.1
+      image: slimdeluxe/php:8.3-v1.0
 tooling:
   php:
     service: appserver
@@ -14,3 +14,7 @@ tooling:
     service: appserver
     description: Run tests
     cmd: "composer test"
+  format:
+    service: appserver
+    description: Fix code style issues
+    cmd: "composer format"
