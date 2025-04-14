@@ -45,7 +45,9 @@ Set up the PHP CLI interpreter:
     * In the `Additional` fieldset, for the `Debugger extension` set the Xdebug extension.
         * For PHP 8.1 this should be:  
           `/usr/local/lib/php/extensions/no-debug-non-zts-20210902/xdebug.so`
-        * For PHP 8.2 and 8.3:
+        * For PHP 8.2:
+          `/usr/local/lib/php/extensions/no-debug-non-zts-20220829/xdebug.so`
+        * For PHP 8.3:
           `/usr/local/lib/php/extensions/no-debug-non-zts-20230831/xdebug.so`
         * You can always find your correct path to `xdebug.so` by SSH-ing into the container (`lando ssh`) and running the command:  
           `find /usr/local/lib/php/extensions -name 'xdebug.so'`
